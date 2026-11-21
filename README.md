@@ -25,9 +25,23 @@
 
 点击图片查看对应资料；更多实物与 PCB 图片见[完整作品集](https://github.com/mnblzs/resume-portfolio/blob/main/portfolio/portfolio.md)。
 
-## 开源硬件
+## 开源硬件仓库
 
-### USB 3.0 ReDriver 中继板
+完整的原理图、PCB、BOM 与说明都整理在仓库里，可导入嘉立创 EDA 专业版直接查看或复刻。
+
+| 仓库 | 内容 | 关键器件 / 接口 |
+| --- | --- | --- |
+| [gh125-cable-tester](https://github.com/mnblzs/gh125-cable-tester) | GH125 系列线束通断与线序检测工装 | TP4059 充电、GH125-S02/S04/S07 连接器矩阵、MST22D18G2 拨动开关 |
+| [stm32f4-dev-board](https://github.com/mnblzs/stm32f4-dev-board) | 2025 赛季步兵机器人主控开发板 | STM32F407（工程标注 F405RGT6）、ME3121 + AMS1117 供电、SN65HVD232D CAN |
+| [mt6835-magnetic-encoder](https://github.com/mnblzs/mt6835-magnetic-encoder) | RM25 工程机器人关节磁编码器模块 | MT6835GT + STM32F103C8T6、MAX3051 CAN、适配大疆 3508 安装孔位 |
+| [usb3-redriver-pi3eqx7502](https://github.com/mnblzs/usb3-redriver-pi3eqx7502) | USB 3.0 长线中继板（信号调理） | PI3EQX7502AI、8 位拨码调 EQ / DE、2 层 43.59 × 57.42 mm |
+| [solar-car-hardware](https://github.com/mnblzs/solar-car-hardware) | 2024 工训太阳能小车三板方案 | CN3305 升压充电、超级电容单体保护、TPS63070 + DRV8837 控制底板 |
+
+**按需求找**：修线束查线序 → `gh125-cable-tester`；主控板与 CAN 外设 → `stm32f4-dev-board`；关节角度反馈 → `mt6835-magnetic-encoder`；相机等长线 USB 3.0 掉速 → `usb3-redriver-pi3eqx7502`；整机供电与储能 → `solar-car-hardware`。
+
+五个仓库结构一致：`docs/` 放阅读型资料，`hardware/` 放 EDA 工程与器件清单，另附 `LICENSE`、`NOTICE` 与设计文件校验值 `SHA256SUMS`，clone 后可 `sha256sum -c SHA256SUMS` 自检。
+
+### 重点：USB 3.0 ReDriver 中继板
 
 面向 USB 3.0 长线连接中的信号衰减问题，基于 **PI3EQX7502** 搭建信号中继与参数配置标定板，便于在具体线缆和设备组合下调整 EQ / DE 配置。
 
@@ -37,7 +51,7 @@
 
 [项目说明](https://github.com/mnblzs/usb3-redriver-pi3eqx7502) · [原理图](https://github.com/mnblzs/usb3-redriver-pi3eqx7502/blob/main/hardware/schematic.pdf) · [硬件文件](https://github.com/mnblzs/usb3-redriver-pi3eqx7502/tree/main/hardware)
 
-### 工训太阳能小车硬件
+### 重点：工训太阳能小车硬件
 
 面向 **2024 年工训新能源小车**的早期硬件实践，采用充电板、超级电容板和控制底板分工的三板方案，覆盖能量输入、储能保护与电机驱动。
 
